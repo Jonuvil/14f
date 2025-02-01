@@ -1,0 +1,40 @@
+.respuesta{
+    border: solid 1px white;
+    margin: auto;
+    margin-bottom: 30px;
+    margin-top: 10px;
+    text-align: center;
+    padding: 15px;
+    width:fit-content;
+    height: fit-content;
+    border-radius: 10%;
+}
+#respuestas{
+    margin: auto;
+    width:fit-content;
+}
+#gif{
+    text-align: center;
+    width:fit-content;
+    margin: auto;
+}
+#cuadro-si{
+    background-color: rgb(88, 219, 88);
+}
+#cuadro-no{
+    top: 51%;
+    left:53%;
+    position: absolute;
+    background-color: rgb(255, 87, 87);}
+#pregunta{
+    margin-top: 40px;
+    font-size: larger;
+    font-weight: bold;
+    text-align: center;
+}
+#principal{
+    padding-top: 40px;
+    border-radius: 10px;
+    background-color: rgb(208, 107, 107);
+    height: 1000000px;
+}

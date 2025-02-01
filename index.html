@@ -3,9 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
     <title>Document</title>
 </head>
 <body>
-    Buenos dias!
+    <div id="principal">
+        <div id="pregunta"> ¿Quieres ser mi San Valentín amorchanchi? </div>
+        <div id="gif"><img src="./images/oso1.gif" alt=""></div>
+        <div id="respuestas">
+            <button class="respuesta" id="cuadro-si">SI</button>
+            <button class="respuesta" id="cuadro-no">NO</button>
+        </div>
+    </div>
 </body>
+
+<script>
+    const cuadroSi = document.getElementById('cuadro-si');
+    const cuadroNo = document.getElementById('cuadro-no');
+
+    // cuadroSi.addEventListener('click', () => {
+    //     const gif = document.getElementById('gif');
+    //     gif.innerHTML = `<img src="./images/oso2.gif" alt="">`;
+    //     cuadroSi.disabled = true;
+    //     cuadroNo.disabled = true;
+    // });
+    
+    cuadroNo.addEventListener('click', () => {
+        const x = Math.floor(Math.random() * (window.innerWidth - boton.offsetWidth));
+        const y = Math.floor(Math.random() * (window.innerHeight - boton.offsetHeight));
+        cuadroNo.style.left=x+"px";
+        cuadroNo.style.top=y+"px";
+    });
+</script>
 </html>
