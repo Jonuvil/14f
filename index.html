@@ -7,32 +7,45 @@
     <title>Document</title>
 </head>
 <body>
-    <div id="principal">
         <div id="pregunta"> ¿Quieres ser mi San Valentín amorchanchi? </div>
         <div id="gif"><img src="./images/oso1.gif" alt=""></div>
         <div id="respuestas">
-            <button class="respuesta" id="cuadro-si">SI</button>
-            <button class="respuesta" id="cuadro-no">NO</button>
+            <button class="respuesta" id="cuadroSi">SI</button>
+            <button class="respuesta" id="cuadroNo">NO</button>
         </div>
-    </div>
 </body>
 
 <script>
-    const cuadroSi = document.getElementById('cuadro-si');
-    const cuadroNo = document.getElementById('cuadro-no');
-
-    // cuadroSi.addEventListener('click', () => {
-    //     const gif = document.getElementById('gif');
-    //     gif.innerHTML = `<img src="./images/oso2.gif" alt="">`;
-    //     cuadroSi.disabled = true;
-    //     cuadroNo.disabled = true;
-    // });
-    
+    const cuadroSi = document.getElementById('cuadroSi');
+    const cuadroNo = document.getElementById('cuadroNo');
+    let iteraciones=0;
+    let lista=["No te pases amorchanchi","Dale a que si bobiiii","¿Estás segura? :(","Amorchanchiiii pareeeee","Marranota que nos quedamos sin sushi",
+                "Amooooor ya le has dado demasiadas veceees","¿No mi amas?","Amorchanchi le tienes que dar a que si ya"]
+    cuadroSi.addEventListener('click', () => {
+        const gif = document.getElementById('gif');
+        const pregunta = document.getElementById('pregunta');
+        pregunta.textContent = "!OLEEEEEEEEE!";
+        gif.innerHTML = `<img src="./images/oso2.gif" alt="">`;
+        cuadroSi.style.display="none";
+        cuadroNo.style.display="none";
+    });
     cuadroNo.addEventListener('click', () => {
-        const x = Math.floor(Math.random() * (window.innerWidth - boton.offsetWidth));
-        const y = Math.floor(Math.random() * (window.innerHeight - boton.offsetHeight));
+        const x = Math.floor(Math.random() * ((window.innerWidth-200) - cuadroNo.offsetWidth));
+        const y = Math.floor(Math.random() * ((window.innerHeight-200) - cuadroNo.offsetHeight));
         cuadroNo.style.left=x+"px";
         cuadroNo.style.top=y+"px";
+        cuadroNo.textContent = lista[iteraciones];
+        if (iteraciones>lista.length-1){
+            iteraciones=0;
+            cuadroNo.textContent = lista[iteraciones]
+        }
+        else{
+        iteraciones++;}
+        var estilo = window.getComputedStyle(cuadroSi);
+        tamañoFuente=estilo.fontSize;
+        let regex = /[0-9]*\.?[0-9]+/g;
+        let tamaño = parseInt(tamañoFuente.match(regex));
+        cuadroSi.style.fontSize=tamaño+20+"px";
     });
 </script>
 </html>
